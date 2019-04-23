@@ -1,0 +1,54 @@
+﻿1、新建文件夹，初始化仓库
+命令：git init
+结果：会在当前文件下面有个隐藏的文件.git
+
+
+2、在git中设置使用的用户是谁，需要用户名和邮箱
+命令：git config --global user.name "leixueguang"
+命令：git config --global user.email "lei008899@163.com"
+
+3、把代码存储到git仓库中
+命令：git add ./文件      （git add ./   把所有的文件添加到暂存区）
+命令：git commit -m "说明性的文本"  
+
+4、查看当前状态
+命令：git status
+
+5、跳过add步骤。直接放入仓库中
+命令：git commit --all -m "说明性的文本"
+
+6、查看日志
+命令：git log
+命令：git log --oneline   查看列表输出的简洁版日志
+命令：git reflog --oneline  查看历史改变日志
+
+分支的操作
+命令：git branch xxx   创建分支xxx
+命令：git checkout xxx  切换到分支xxx
+命令: git branch         查看所有分支
+命令：git merge xxx      在当前分支上合并指定分支xxx
+
+
+把本地代码上传到github上面去
+命令：git push github仓库地址 分支名称
+
+
+在本地获取github上面的代码
+命令：git pull github仓库地址 分支名称   （前提是本地要初始化一个.git的仓储）
+
+
+用ssh方式上传代码
+生成公钥和私钥
+命令：ssh-keygen -t rsa -C "邮箱"
+
+
+解决代码冲突的问题
+每次提交时，先在本地commit后，先执行pull拿服务器的数据，有冲突解决了。在执行push命令上传
+
+
+提交的时候每次输入的github地址很麻烦，我们可以声明一个类似变量的名称代替地址
+命令：git remote add 变量名 github的地址
+
+然后就可以这样：git push 变量名 master/git pull 变量名 master
+
+git push 变量名 -u master      (这样下次push和pull时候，就只要执行git push/git pull就可以了说)
