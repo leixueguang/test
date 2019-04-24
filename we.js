@@ -9,3 +9,6 @@ console.log('index.html');
 			break;
 	}
 })();
+
+
+console.log('test');
